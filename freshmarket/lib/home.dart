@@ -19,47 +19,46 @@ class WelcomeScreen extends StatelessWidget {
       ),
       child: Center(
         child: Column(
-            children: [
-              const SizedBox(height: 250),
-               Center(
-                child: Image.asset(
-                  "assets/logo.png",
-                  height: 120,
-                   ),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: Image.asset(
+                "assets/logo.png",
+                height: 120,
               ),
-              const Center(
-                  child: Text(
-                'Только свежие фрукты и овощи',
+            ),
+            const Baseline(
+              baseline: 0,
+              baselineType: TextBaseline.ideographic,
+              child: Text(
+                 'Только свежие фрукты и овощи',
+                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.black,
                   fontSize: 20,
+                  fontWeight: FontWeight.bold,
                 ),
-              )),
+              ),
+            ),
             const SizedBox(
-              height: 50,
+              height: 20,
             ),
             getButton(context),
-            const SizedBox(
-              height: 50,
-            )
           ],
         ),
       ),
     ));
   }
 
-
-          
-
   Widget getButton(BuildContext context) {
     return ElevatedButton(
       onPressed: _launchUrl,
       style: ElevatedButton.styleFrom(
         foregroundColor: Colors.amber,
-        backgroundColor: Colors.black, 
+        backgroundColor: Colors.black,
         elevation: 10,
       ),
-      child: const Text('Перейти в каталог', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+      child: const Text('Перейти в каталог',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
     );
   }
 
